@@ -1,0 +1,28 @@
+name: Finalize Shen V5.1
+on:
+  push:
+    branches:
+      - shen-v5-1-deploy
+permissions:
+  contents: write
+jobs:
+  finalize:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: shen-v5-1-deploy
+          fetch-depth: 0
+      - name: Unpack and commit final site
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -xzf .finalize/site-text.tar.gz -C .
+          rm -rf .finalize .github
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Finalize Shen Academy V5.1 site"
+          git push origin HEAD:shen-v5-1-deploy
