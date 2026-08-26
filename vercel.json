@@ -3,120 +3,30 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/classes-and-fees",
-      "destination": "/timetable",
-      "permanent": true
-    },
-    {
-      "source": "/private-training",
-      "destination": "/classes/personal-training",
-      "permanent": true
-    },
-    {
-      "source": "/personal-training",
-      "destination": "/classes/personal-training",
-      "permanent": true
-    },
-    {
-      "source": "/mma-burnie",
-      "destination": "/classes/mma",
-      "permanent": true
-    },
-    {
-      "source": "/burnie-boxing-club",
-      "destination": "/classes/boxing",
-      "permanent": true
-    },
-    {
-      "source": "/karate",
-      "destination": "/classes/karate-adults",
-      "permanent": true
-    },
-    {
-      "source": "/self-defence",
-      "destination": "/classes/self-defence",
-      "permanent": true
-    },
-    {
-      "source": "/fees",
-      "destination": "/timetable",
-      "permanent": true
-    },
-    {
-      "source": "/times",
-      "destination": "/timetable",
-      "permanent": true
-    },
-    {
-      "source": "/schools",
-      "destination": "/school-programs",
-      "permanent": true
-    },
-    {
-      "source": "/area/:slug",
-      "destination": "/areas/:slug",
-      "permanent": true
-    },
-    {
-      "source": "/suburbs",
-      "destination": "/areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations",
-      "destination": "/areas",
-      "permanent": true
-    },
-    {
-      "source": "/service-areas",
-      "destination": "/areas",
-      "permanent": true
-    }
+    {"source":"/classes-and-fees","destination":"/timetable","permanent":true},
+    {"source":"/private-training","destination":"/classes/personal-training","permanent":true},
+    {"source":"/personal-training","destination":"/classes/personal-training","permanent":true},
+    {"source":"/mma-burnie","destination":"/classes/mma","permanent":true},
+    {"source":"/burnie-boxing-club","destination":"/classes/boxing","permanent":true},
+    {"source":"/karate","destination":"/classes/karate-adults","permanent":true},
+    {"source":"/self-defence","destination":"/classes/self-defence","permanent":true},
+    {"source":"/fees","destination":"/timetable","permanent":true},
+    {"source":"/times","destination":"/timetable","permanent":true},
+    {"source":"/schools","destination":"/school-programs","permanent":true},
+    {"source":"/area/:slug","destination":"/areas/:slug","permanent":true},
+    {"source":"/suburbs","destination":"/areas","permanent":true},
+    {"source":"/locations","destination":"/areas","permanent":true},
+    {"source":"/service-areas","destination":"/areas","permanent":true}
   ],
   "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
-        },
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains; preload"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(robots.txt|llms.txt|sitemap.xml)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
-    }
+    {"source":"/(.*)","headers":[
+      {"key":"X-Content-Type-Options","value":"nosniff"},
+      {"key":"X-Frame-Options","value":"SAMEORIGIN"},
+      {"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},
+      {"key":"Permissions-Policy","value":"geolocation=(), microphone=(), camera=(), interest-cohort=()"},
+      {"key":"Strict-Transport-Security","value":"max-age=63072000; includeSubDomains; preload"}
+    ]},
+    {"source":"/assets/(.*)","headers":[{"key":"Cache-Control","value":"public, max-age=31536000, immutable"}]},
+    {"source":"/(robots.txt|llms.txt|sitemap.xml)","headers":[{"key":"Cache-Control","value":"public, max-age=3600"}]}
   ]
 }
